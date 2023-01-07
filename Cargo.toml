@@ -1,11 +1,17 @@
 [package]
-name = "mcpe-lan-advertizer"
+name = "mcbe-lan-advertizer"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+authors = ["max_ishere"]
+description = "Listens for Minecraft Bedrock LAN Ping packets and responds with a Pong packet."
+repository = "https://github.com/max-ishere/mcbe-lan-advertizer"
+license = "MIT"
 
 [dependencies]
-derive_builder = "0.11"
 rand = "0.8"
-toml = "0.5"
+thiserror = "1.0"
+anyhow = "1.0"
+
+[dependencies.clap]
+version = "4.0"
+features = [ "derive" ]
