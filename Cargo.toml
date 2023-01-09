@@ -11,7 +11,13 @@ license = "MIT"
 rand = "0.8"
 thiserror = "1.0"
 anyhow = "1.0"
-
 [dependencies.clap]
+version = "4.0"
+features = [ "derive" ]
+
+[build-dependencies]
+clap_complete = "4.0.7"
+clap_mangen = "0.2.6"
+[build-dependencies.clap]
 version = "4.0"
 features = [ "derive" ]
