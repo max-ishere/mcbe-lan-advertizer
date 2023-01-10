@@ -24,11 +24,6 @@
 //! information there to generate a Pong packet. This can be used if the
 //! server still does not respond with Pong requests.
 //!
-//! The intended use for Ping/Pong in Bedrock Edition is to allow a mobile
-//! device to open a random port UDP socket. This enhanses security of the
-//! device slightly. And the 19132 port socket runs a simpler Ping/Pong code
-//! that in theory should not have security vulnerabilities.
-//!
 //! Because the actual server runs on a random port that port number is
 //! transmitted in the Pong packet. Thus we can run a dedicated server on
 //! any port and point this program to Pong the correct, but arbitrary port.
@@ -39,7 +34,7 @@
 //!
 //! # Still have questions or need support?
 //!
-//! Read the extended README.md on GitHub. It has more details while this page
+//! Read the extended [README.md](https://github.com/max-ishere/mcbe-lan-advertizer) on GitHub. It has more details while this page
 //! is dedicated to developers.
 
 #[macro_use]

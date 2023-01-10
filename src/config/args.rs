@@ -1,9 +1,9 @@
 //! CLI Argument parser
 //!
-//! The [`Modes::Relay`] will look inside the `server.properties` file and send the packets
+//! The [`Mode::Relay`] will look inside the `server.properties` file and send the packets
 //! to the server-port specified there.
 //!
-//! [`Modes::FromProps`] does not communicate with the server. Instead it looks for all the
+//! [`Mode::FromProps`] does not communicate with the server. Instead it looks for all the
 //! avaliable information in `server.properties`. Because the file does not specify the
 //! protocol you need to pass it via proto subcommand.
 

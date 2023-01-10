@@ -153,13 +153,12 @@ fn from_properties(
     println!("Setup complete, waiting for client connections.");
 
     loop {
-        let (len, client_addr) = clients
+        let (_, client_addr) = clients
             .recv_from(&mut buf)
             .with_context(|| "Failed to read client's Ping packet")?;
         println!("{client_addr} Pinged me.");
 
         // TODO: make sure this is actually Ping packet
-        let ping = &mut buf[..len];
 
         clients
             .send_to(&pong, client_addr)
