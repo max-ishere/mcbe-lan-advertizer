@@ -116,3 +116,7 @@ cp target/release/advertize (path)
 cd ..
 rm mcbe-lan-advertizer
 ```
+
+# Have questions?
+
+Ask on [Discussions](https://github.com/max-ishere/mcbe-lan-advertizer/discussions).
