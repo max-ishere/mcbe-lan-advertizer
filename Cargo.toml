@@ -2,10 +2,12 @@
 name = "mcbe-lan-advertizer"
 version = "0.1.0"
 edition = "2021"
-authors = ["max_ishere"]
+authors = [ "max_ishere" ]
 description = "Listens for Minecraft Bedrock LAN Ping packets and responds with a Pong packet."
 repository = "https://github.com/max-ishere/mcbe-lan-advertizer"
 license = "MIT"
+category = [ "command-line-utilities", "games", "network-programming" ]
+keywords = [ "cli", "minecraft", "mcbe", "mcpe", "mc-lan-games" ]
 
 [dependencies]
 rand = "0.8"
