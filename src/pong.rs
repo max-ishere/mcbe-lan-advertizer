@@ -34,7 +34,7 @@ pub struct Pong {
     pub description: String,
     /// The string must be in format X.X.X, where X is a number, otherwise the client wont display it.
     /// See [Bedrock version numbers](https://wiki.vg/Bedrock_Protocol_version_numbers)
-    pub protocol: (usize, String),
+    pub protocol: (u64, String),
     /// Not displayed in the friends tab as of MCBE v1.19.51
     pub gamemode: Gamemode,
     /// Server's IPv4 port

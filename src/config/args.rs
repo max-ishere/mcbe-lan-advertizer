@@ -1,6 +1,11 @@
 //! CLI Argument parser
 //!
-//! The [`Args`] struct represents the CLI args. This is where [`Mode`]s of operation are defined.
+//! The [`Modes::Relay`] will look inside the `server.properties` file and send the packets
+//! to the server-port specified there.
+//!
+//! [`Modes::FromProps`] does not communicate with the server. Instead it looks for all the
+//! avaliable information in `server.properties`. Because the file does not specify the
+//! protocol you need to pass it via proto subcommand.
 
 use clap::{Parser, Subcommand};
 
@@ -23,7 +28,7 @@ pub enum Mode {
     /// Reponds with information found in server.properties.
     /// You MUST specify server protocol with proto subcommand
     FromProps {
-        /// Path to server.properties. Default: `server.properties` in current directory.
+        /// Path to server.properties.
         #[clap(value_parser, default_value = "server.properties")]
         props: String,
 
@@ -34,7 +39,7 @@ pub enum Mode {
 
 // I really wanted to have `--proto 560 1.19.51`. However at this time tuple arguments are not
 // supported so I made it an only subcommand that is also required. Looks a bit confusing to the
-// user but because there is an optional props arg before proto this seems like the best trade of
+// user but because there is an optional props arg before proto this seems like the best tradeof
 #[derive(Subcommand)]
 pub enum Proto {
     /// REQUIRED Sets the server protocol version. See <https://wiki.vg/Bedrock_Protocol_version_numbers>
