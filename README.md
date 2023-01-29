@@ -24,6 +24,16 @@ If the server's IP is not the same IP from which the Pong packet was sent then y
 
 So, no you cannot join some-server.net using this program. If really want to do that I can only point you to setting up a proxy. This is beyond the scope of this application.
 
+Special thanks to [u/Riven5's suggestion](https://www.reddit.com/r/MCPE/comments/10945ek/comment/j3xn26b/?utm_source=share&utm_medium=web2x&context=3) to use [jhead/phantom](https://github.com/jhead/phantom). As Phantom's readme says:
+
+> **Phantom README.md:**
+> 
+> Makes hosted Bedrock/MCPE servers show up as LAN servers, specifically for consoles.
+> You can now play on remote servers (not Realms!) on your Xbox and PS4 with friends.
+> It's like having a LAN server that's not actually there, spooky.
+
+I am not related to phantom in any way so if you have any questions about that software please contact the developer in their prefered way. Their README seems to have enough instructions on how to use the software so you should not have any issues.
+
 # Running
 
 ## Relay mode
@@ -37,6 +47,11 @@ Running:
 
 ``` shell
 advertize relay [ optional path to server.properties ]
+
+# E.g:
+  advertize relay bedrock_servers/creative_1/server.properties
+# You have to give a path to the file itself, not just the directory,
+# otherwise the file won't be found.
 ```
 
 In this mode the program will look into the current directory for a file called 
@@ -58,6 +73,9 @@ the number of players online.
 
 ``` shell
 advertize from_props [ optional path to server.properties ] proto <num> <str>
+
+# E.g:
+  advertize from_props creative_world/server.properties proto 560 '1.19.51'
 ```
 
 In this mode the `server.properties` is read and only the information there is used
@@ -102,6 +120,8 @@ git clone https://github.com/max-ishere/mcbe-lan-advertizer
 
 ``` shell
 cargo build --release
+
+# --release will optimize the app so it runs more efficiently
 ```
 
 3. Copy the executable somewhere convinient.
@@ -109,8 +129,9 @@ cargo build --release
 ``` shell
 cp target/release/advertize (path)
 ```
+You can also do this in a file manager by opening the project, then `target` and then `release` folder. 
 
-4. If you dont need the repository and you have saved the executable to a different location then you can delete it.
+4. If you dont need the git repository and you have saved the executable to a different location then you can delete it.
 
 ``` shell
 cd ..
